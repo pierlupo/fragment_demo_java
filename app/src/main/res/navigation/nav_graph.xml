@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/FormFragment">
+
+    <fragment
+
+            android:id="@+id/FormFragment"
+            android:name="com.exercice1.FormFragment"
+            android:label="Form Fragment"
+            tools:layout="@layout/fragment_form">
+
+        <action
+                android:id="@+id/action_FormFragment_to_FirstFragment"
+                app:destination="@id/FirstFragment"
+        />
+
+<!--        <action-->
+<!--                android:id="@+id/action_FirstFragment_to_FormFragment"-->
+<!--                app:destination="@id/FormFragment"/>-->
+
+    </fragment>
+
+<!--    <fragment-->
+
+<!--            android:id="@+id/SecondFragment"-->
+<!--            android:name="com.exercice1.SecondFragment"-->
+<!--            android:label="@string/second_fragment_label"-->
+<!--            tools:layout="@layout/fragment_second">-->
+
+<!--        <action-->
+<!--                android:id="@+id/action_SecondFragment_to_FirstFragment"-->
+<!--                app:destination="@id/FirstFragment"/>-->
+
+<!--    </fragment>-->
+
+    <fragment
+
+            android:id="@+id/FirstFragment"
+            android:name="com.exercice1.FirstFragment"
+            android:label="First fragment"
+            tools:layout="@layout/fragment_first">
+
+        <argument android:name="prnm" app:argType="string"/>
+        <argument android:name="nm" app:argType="string"/>
+        <argument android:name="phon" app:argType="string"/>
+
+    <action
+                android:id="@+id/action_FirstFragment_to_FormFragment"
+                app:destination="@id/FormFragment"/>
+
+<!--    <action-->
+<!--            android:id="@+id/action_FormFragment_to_FirstFragment"-->
+<!--            app:destination="@id/FirstFragment"/>-->
+
+    </fragment>
+
+</navigation>
