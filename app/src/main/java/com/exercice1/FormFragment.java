@@ -11,12 +11,12 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 import com.exercice1.databinding.FragmentFormBinding;
+import com.exercice1.service.ContactService;
 import org.jetbrains.annotations.NotNull;
 
 public class FormFragment extends Fragment {
 
     private FragmentFormBinding binding;
-
     private Button btn1;
 
     public FormFragment() {
@@ -40,7 +40,8 @@ public class FormFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         binding.btn.setOnClickListener((v) -> {
-            NavDirections action = FormFragmentDirections.actionFormFragmentToFirstFragment(binding.prnm.getText().toString(), binding.nm.getText().toString(), binding.phon.getText().toString());
+            ContactService.getInstance().addContact(binding.prnm.getText().toString(), binding.nm.getText().toString(), binding.phon.getText().toString());
+            NavDirections action = FormFragmentDirections.actionFormFragmentToContactsFragment();
             NavHostFragment.findNavController(FormFragment.this).navigate(action);
 
         });
